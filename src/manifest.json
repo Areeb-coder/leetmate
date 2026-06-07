@@ -10,6 +10,7 @@
   ],
   "host_permissions": [
     "https://leetcode.com/*",
+    "https://*.geeksforgeeks.org/*",
     "https://generativelanguage.googleapis.com/*"
   ],
   "action": {
@@ -26,7 +27,11 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://leetcode.com/problems/*"],
+      "matches": [
+        "https://leetcode.com/problems/*",
+        "https://www.geeksforgeeks.org/problems/*",
+        "https://practice.geeksforgeeks.org/problems/*"
+      ],
       "js": ["content.js"],
       "run_at": "document_start"
     }
@@ -34,7 +39,10 @@
   "web_accessible_resources": [
     {
       "resources": ["inject.js", "assets/*"],
-      "matches": ["https://leetcode.com/*"]
+      "matches": [
+        "https://leetcode.com/*",
+        "https://*.geeksforgeeks.org/*"
+      ]
     }
   ],
   "icons": {
